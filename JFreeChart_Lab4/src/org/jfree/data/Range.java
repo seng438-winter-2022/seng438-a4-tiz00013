@@ -196,7 +196,7 @@ public strictfp class Range implements Serializable {
         }
         return result;
     }
-    
+
     /**
      * Creates a new range by combining two existing ranges.
      * <P>

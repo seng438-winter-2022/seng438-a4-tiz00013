@@ -32,9 +32,9 @@ public class DataUtilitiesTest {
 	    @Rule
 	    public ExpectedException thrown= ExpectedException.none();
 	    
-	    @Test(expected = IllegalArgumentException.class)
+	    @Test
 	    public void passingNullAsParameter() {
-	    	//thrown.expect(IllegalArgumentException.class);
+	    	thrown.expect(IllegalArgumentException.class);
 	    	DataUtilities.calculateColumnTotal(null, 0);
 	    }
 		
