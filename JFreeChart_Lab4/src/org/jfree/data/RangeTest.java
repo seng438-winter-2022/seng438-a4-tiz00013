@@ -832,7 +832,7 @@ public class RangeTest {
 		}
 		
 		//isNaNRange Method
-		public static class isNaNRangeTest{
+		/*public static class isNaNRangeTest{
 			private Range r1;
 			@Before
 			public void setUp() throws Exception{
@@ -840,18 +840,18 @@ public class RangeTest {
 				r1 = new Range (10,20);
 			}
 			
-			/*@Test
+			@Test
 			// Stmt coverage test with valid input
 			public void stmtTestForMethodIsNaNRange() {
 				assertTrue("Test with valid input", r1.isNaNRange());
-			}*/
+			}
 			
 			
 			@After
 			public void tearDown(){
 			}
 			
-		}
+		}*/
 		
 		//scale Method
 		public static class scaleTest{
