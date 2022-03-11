@@ -528,7 +528,7 @@ public class DataUtilitiesTest {
 	    }
 	    
 	    //A test use all positive key and value within KeyedValues object to see if method can work correctly
-	    @Test
+	    /*@Test
 	    public void TestPositiveForMethodGetCumulativePercentages() {
 	    	final KeyedValues input = mockingContext.mock(KeyedValues.class);
 	    	mockingContext.checking(new Expectations(){
@@ -576,10 +576,10 @@ public class DataUtilitiesTest {
 	    		}
 	    	});
 	    	assertEquals("testing with all positive values", true, DataUtilities.getCumulativePercentages(input).equals(output));
-	    }
+	    }*/
 	    
 	  //A test use all negative key and value within KeyedValues object to see if method can work correctly
-	    @Test
+	   /* @Test
 	    public void TestNegativeForMethodGetCumulativePercentages() {
 	    	final KeyedValues input = mockingContext.mock(KeyedValues.class);
 	    	mockingContext.checking(new Expectations(){
@@ -627,7 +627,7 @@ public class DataUtilitiesTest {
 	    		}
 	    	});
 	    	assertEquals("testing with all negative values", true, DataUtilities.getCumulativePercentages(input).equals(output));
-	    }
+	    }*/
 	    
 	    //A test use both positive, negative and different decimal number to see if method can work correctly
 	    @Test
@@ -732,7 +732,7 @@ public class DataUtilitiesTest {
 	    }
 	    
 	    //A test use KeyedValues object with null value to see if method can work correctly
-	    @Test
+	    /*@Test
 	    public void TestNullValueGetCumulativePercentages() {
 	    	final KeyedValues input = mockingContext.mock(KeyedValues.class);
 	    	mockingContext.checking(new Expectations(){
@@ -780,7 +780,7 @@ public class DataUtilitiesTest {
 	    		}
 	    	});
 	    	assertEquals("testing null value", true, DataUtilities.getCumulativePercentages(input).equals(output));
-	    }
+	    }*/
 	    
 	  //A test to see if passing a null object as an argument will be accepted
 	    @Test
