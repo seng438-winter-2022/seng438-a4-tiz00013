@@ -760,7 +760,8 @@ public class RangeTest {
 				r5 = new Range(30, 40);
 				r6 = new Range(30, 41);
 				r7 = new Range(30, 40);
-				r8 = new Range(30, 40);
+				r8 = new Range(10, 40);
+
 				
 			}
 			/* Testing if two different values will create a hashcode*/
@@ -787,7 +788,13 @@ public class RangeTest {
 				assertNotEquals("Test with different range input", x, y);
 			}
 			
-			
+			//mutation test
+			@Test
+			public void mutationTest3ForMethodHashCode() {
+				int x = r8.hashCode();
+				//int y = r5.hashCode();
+				assertEquals("Test with same range input", 2121531392, x);
+			}			
 		}
 		
 		// Constructor TestCase
