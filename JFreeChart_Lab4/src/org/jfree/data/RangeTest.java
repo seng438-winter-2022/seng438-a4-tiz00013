@@ -536,17 +536,7 @@ public class RangeTest {
 			testR2 = new Range(20.0, 50.0);
 			assertEquals("The expected range output doesnt match with the actual output", testR2, Range.expand(testR, -0.5, 1.0));
 		}
-		
-		//mutation test
-		@Test
-		public void mutationTestFor1MethodExpandTest() {
-			
-			testR2 = new Range(19.0, 50.0);
-			assertNotEquals("The expected range output doesnt match with the actual output", testR2, Range.expand(testR, -0.5, 1.0));
-		}
-		
-		
-		
+	
 		@After
 		public void tearDown()
 			{
@@ -733,8 +723,8 @@ public class RangeTest {
 		
 		/*
 		 * public int hashCode()
-		 *Returns integer hashcode for given range
-		 *Parameters: None
+		 * Returns integer hashcode for given range
+		 * Parameters: None
 		 *
 		 * 
 		 */
@@ -800,9 +790,10 @@ public class RangeTest {
 		// Constructor TestCase
 		public static class construtorTest{
 			private Range r1;
+			private Range r2;
 			@Before
 			public void setUp() throws Exception{
-				
+				r2 = new Range(0,100);
 			}
 			
 			//test the branch with situation when lower > upper
@@ -823,8 +814,6 @@ public class RangeTest {
 			public void MutationTest1ForConstructor() {
 				r1 = new Range(100.1,100);
 			}
-			
-			
 			
 			
 			@After
