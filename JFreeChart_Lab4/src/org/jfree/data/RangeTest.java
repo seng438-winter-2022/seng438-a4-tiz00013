@@ -728,10 +728,10 @@ public class RangeTest {
 			}
 			
 			// For Lab4 mutation test
-			@Test(expected = IllegalArgumentException.class)
-			public void MutationTest1ForConstructor() {
-				r1 = new Range(100.1,100);
-			}
+//			@Test(expected = IllegalArgumentException.class)
+//			public void MutationTest1ForConstructor() {
+//				r1 = new Range(100.1,100);
+//			}
 			
 			@After
 			public void tearDown()
