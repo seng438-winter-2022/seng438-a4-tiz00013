@@ -239,6 +239,7 @@ public class RangeTest {
 			
 			assertEquals("The Central value is.", 100.0, testR5.getCentralValue(), .0000001d);
 		}
+		
 
 		@After
 		public void tearDown()
@@ -619,6 +620,9 @@ public class RangeTest {
 				
 			}
 			
+
+			
+			
 			
 			@After
 			public void tearDown()
@@ -712,8 +716,8 @@ public class RangeTest {
 			@Test
 			public void mutationTest3ForMethodConstrain()
 			{
-				double value = 11;
-				assertEquals("The Expected output doesnt match with the actual output.", 11, testR.constrain(value), .0000001d);
+				double value = 31;
+				assertEquals("The Expected output doesnt match with the actual output.", 30, testR.constrain(value), .0000001d);
 			}
 			
 			
@@ -888,6 +892,7 @@ public class RangeTest {
 			{
 				assertTrue("test with arg1 < this.lower, arg2 > this.lower", r1.intersects(9,11));
 			}
+			
 			
 			
 			//for single argument
