@@ -537,6 +537,28 @@ public class RangeTest {
 			assertEquals("The expected range output doesnt match with the actual output", testR2, Range.expand(testR, -0.5, 1.0));
 		}
 	
+		//Mutation Test
+		@Test
+		public void mutationTestForMethodExpand()
+		{
+			testR2 = new Range(10, 20);
+			
+			assertNotEquals("The expected range output doesnt match with the actual output", testR2, Range.expand(testR, -0.5, -1.0));
+			
+			
+		}
+		
+		//Mutation Test
+		@Test
+		public void mutationTest2ForMethodExpand()
+		{
+			testR2 = new Range(15, 15);
+					
+			assertEquals("The expected range output doesnt match with the actual output", testR2, Range.expand(testR, -0.5, -1.0));
+							
+		}
+				
+		
 		@After
 		public void tearDown()
 			{
@@ -785,6 +807,7 @@ public class RangeTest {
 				//int y = r5.hashCode();
 				assertEquals("Test with same range input", -2074607616, x);
 			}			
+		
 		}
 		
 		// Constructor TestCase
