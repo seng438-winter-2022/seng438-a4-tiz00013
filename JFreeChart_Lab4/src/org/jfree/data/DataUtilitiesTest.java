@@ -1104,7 +1104,7 @@ public static class DoubleArrayEqualityTest extends DataUtilities {
 	
 	
 	/*
-	 * Testing Row Total method that requires 3 parameters
+	 * Testing Row Total method that requires 3 paramters
 	 * @param1 - Values2D object to add Rows
 	 * @param2 - index of row to add from
 	 * @param3 - valid index for all rows
