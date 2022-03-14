@@ -536,7 +536,16 @@ public class RangeTest {
 			assertEquals("The expected range output doesnt match with the actual output", testR2, Range.expand(testR, -0.5, 1.0));
 		}
 		
-
+		//mutation test
+		@Test
+		public void mutationTestFor1MethodExpandTest() {
+			
+			testR2 = new Range(19.0, 50.0);
+			assertNotEquals("The expected range output doesnt match with the actual output", testR2, Range.expand(testR, -0.5, 1.0));
+		}
+		
+		
+		
 		@After
 		public void tearDown()
 			{
@@ -691,6 +700,23 @@ public class RangeTest {
 				assertEquals("The Expected output doesnt match with the actual output.", 11, testR.constrain(value), .0000001d);
 			}
 			
+			//Mutation Test
+			@Test
+			public void mutationTest2ForMethodConstrain()
+			{
+				double value = 9;
+				assertEquals("The Expected output doesnt match with the actual output.", 10, testR.constrain(value), .0000001d);
+			}
+			
+			//Mutation Test
+			@Test
+			public void mutationTest3ForMethodConstrain()
+			{
+				double value = 11;
+				assertEquals("The Expected output doesnt match with the actual output.", 11, testR.constrain(value), .0000001d);
+			}
+			
+			
 			
 			@After
 			public void tearDown()
@@ -786,6 +812,9 @@ public class RangeTest {
 			public void MutationTest1ForConstructor() {
 				r1 = new Range(100.1,100);
 			}
+			
+			
+			
 			
 			@After
 			public void tearDown()
