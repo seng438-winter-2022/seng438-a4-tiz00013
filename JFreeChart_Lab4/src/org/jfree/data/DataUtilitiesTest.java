@@ -931,4 +931,340 @@ public static class DoubleArrayEqualityTest extends DataUtilities {
 	    	
 	    }
 	}
+	
+	
+	
+	
+/***************************** Mutations testing ******************************/
+	
+	/*
+	 * Testing Column Total method that requires 3 parameters
+	 * @param1 - Values2D object to add Cols
+	 * @param2 - index of col to add from
+	 * @param3 - valid index for all columns
+	 */
+	
+	
+	public static class CalculateColumnTotalTestValidRows {
+		Mockery context;
+		int validrows [] = {0, 1, 2, 3};
+		int validrows2 [] = {};
+		int validrows3 [] = {1, 2, 3, 4};
+		
+	    @Before
+	    public void setUp() throws Exception {
+	    	context = new Mockery();
+	    }
+	    
+	    /*
+	     * Testing the exception thrown when null parameter is passed
+	     */
+	    @Rule
+	    public ExpectedException thrown= ExpectedException.none();
+	    
+	    @Test
+	    public void passingNullAsParameter() {
+	    	thrown.expect(IllegalArgumentException.class);
+	    	DataUtilities.calculateColumnTotal(null, 0, null);
+	    }
+		
+	    /*
+	     * Testing the boundary value of 32 bit signed int and adding another number to check for overflow
+	     */
+	    
+		@Test
+		public void intBoundaryValues() {
+			final Values2D values = context.mock(Values2D.class);
+		    context.checking(new Expectations() {
+		        {
+		            one(values).getRowCount();
+		            will(returnValue(4));
+		            one(values).getValue(0, 0);
+		            will(returnValue(2147483647));
+		            one(values).getValue(1, 0);
+		            will(returnValue(100));
+		            one(values).getValue(2, 0);
+		            will(returnValue(-2147483648));
+		            one(values).getValue(3, 0);
+		            will(returnValue(-90));
+		        }
+		    });
+		   
+		   double result = DataUtilities.calculateColumnTotal(values, 0, validrows);
+		   assertEquals("Adding 4 rows with 32 bit signed values", 9, result, .000000001d);
+		}
+		
+		/*
+		 * Testing the column total for both positive and negative values
+		 */
+		
+		@Test
+		public void positiveNegativeColumnValues() {
+			final Values2D values = context.mock(Values2D.class);
+		    context.checking(new Expectations() {
+		        {
+		            one(values).getRowCount();
+		            will(returnValue(4));
+		            one(values).getValue(0, 0);
+		            will(returnValue(-5.000005));
+		            one(values).getValue(1, 0);
+		            will(returnValue(5.000005));
+		            one(values).getValue(2, 0);
+		            will(returnValue(30.000055));
+		            one(values).getValue(3, 0);
+		            will(returnValue(-30.000055));
+		        }
+		    });
+		    
+		    double result = DataUtilities.calculateColumnTotal(values, 0, validrows);
+		   assertEquals("Adding 4 columns with positive and negative values",result, 0, .000000001d);
+		}
+		
+		//first input invalid
+		@Test
+		public void invalidFirstInputTest(){
+			final Values2D values = context.mock(Values2D.class);
+		    context.checking(new Expectations() {
+		        {
+		            one(values).getRowCount();
+		            will(returnValue(0));
+		        }
+		    });
+		    
+		    double result = DataUtilities.calculateColumnTotal(values, 5, validrows2);
+		    assertEquals("Input an empty Values2D object",result, 0, .000000001d);  
+		}
+		
+		//second input invalid
+		@Test
+		public void invalidSecondInputTest() {
+			final Values2D values = context.mock(Values2D.class);
+		    context.checking(new Expectations() {
+		        {
+		            one(values).getRowCount();
+		            will(returnValue(0));
+		        }
+		    });
+		    double result = DataUtilities.calculateColumnTotal(values, -1, validrows2);
+		    assertEquals("Input an invalid second input",result, 0, .000000001d);
+		}
+		
+		//passing null values for cols to add
+		@Test
+		public void NullColumnValueTest() {
+			final Values2D values = context.mock(Values2D.class);
+		    context.checking(new Expectations() {
+		        {
+		        	one(values).getRowCount();
+		            will(returnValue(4));
+		            one(values).getValue(0, 0);
+		            will(returnValue(null));
+		            one(values).getValue(1, 0);
+		            will(returnValue(null));
+		            one(values).getValue(2, 0);
+		            will(returnValue(null));
+		            one(values).getValue(3, 0);
+		            will(returnValue(null));
+		        }
+		    });
+		   
+		   double result = DataUtilities.calculateColumnTotal(values, 0, validrows);
+		   assertEquals("Input Values2D object contains null value",0, result, .000000001d);
+		}
+		
+		//passing valid row array with missing 0 index value.
+		@Test
+		public void InvalidValidRowsArrayIndexTest() {
+			final Values2D values = context.mock(Values2D.class);
+		    context.checking(new Expectations() {
+		        {
+		        	one(values).getRowCount();
+		            will(returnValue(4));
+		            one(values).getValue(0, 0);
+		            will(returnValue(null));
+		            one(values).getValue(1, 0);
+		            will(returnValue(null));
+		            one(values).getValue(2, 0);
+		            will(returnValue(null));
+		            one(values).getValue(3, 0);
+		            will(returnValue(null));
+		        }
+		    });
+		   
+		   double result = DataUtilities.calculateColumnTotal(values, 0, validrows3);
+		   assertEquals("Input Values2D object contains null value",0, result, .000000001d);
+		}
+		
+		
+	    @After
+	    public void tearDown() throws Exception {
+	    	context = null;
+	    }
+	}
+	
+	
+	/*
+	 * Testing Row Total method that requires 3 parameters
+	 * @param1 - Values2D object to add Rows
+	 * @param2 - index of row to add from
+	 * @param3 - valid index for all rows
+	 */
+	
+	
+	public static class CalculateRowTotalTestValidCols {
+		Mockery context;
+		int validcols [] = {0, 1, 2, 3};
+		int validcols2 [] = {};
+		int validcols3 [] = {1, 2, 3, 4};
+		
+	    @Before
+	    public void setUp() throws Exception {
+	    	context = new Mockery();
+	    }
+	    
+	    @Rule
+	    public ExpectedException thrown= ExpectedException.none();
+	    
+	    /*
+	     * Testing the exception thrown when null parameter is passed
+	     */
+	    @Test
+	    public void passingNullAsParameter() {
+	    	thrown.expect(IllegalArgumentException.class);
+	    	DataUtilities.calculateRowTotal(null, 0);
+	    }
+		
+	    /*
+	     * Testing the boundary value of 32 bit signed int and adding another number to check for overflow
+	     */
+		@Test
+		public void intBoundaryValues() {
+			final Values2D values = context.mock(Values2D.class);
+		    context.checking(new Expectations() {
+		        {
+		            one(values).getColumnCount();
+		            will(returnValue(4));
+		            one(values).getValue(0, 0);
+		            will(returnValue(2147483647));
+		            one(values).getValue(0, 1);
+		            will(returnValue(100));
+		            one(values).getValue(0, 2);
+		            will(returnValue(-2147483648));
+		            one(values).getValue(0, 3);
+		            will(returnValue(-90));
+		        }
+		    });
+		    
+		    double result = DataUtilities.calculateRowTotal(values, 0, validcols);
+		   assertEquals("Adding 4 rows with 32 bit signed values", 9 , result , .000000001d);
+		}
+		
+		
+		/*
+		 * Testing the column total for both positive and negative values
+		 */
+		@Test
+		public void positiveNegativeRowValues() {
+			final Values2D values = context.mock(Values2D.class);
+		    context.checking(new Expectations() {
+		        {
+		        	one(values).getColumnCount();
+		            will(returnValue(4));
+		            one(values).getValue(0, 0);
+		            will(returnValue(-5.000005));
+		            one(values).getValue(0, 1);
+		            will(returnValue(5.000005));
+		            one(values).getValue(0, 2);
+		            will(returnValue(30.000055));
+		            one(values).getValue(0, 3);
+		            will(returnValue(-30.000055));
+		        }
+		    });
+		   
+		   double result = DataUtilities.calculateRowTotal(values, 0, validcols);
+		   assertEquals("Adding 4 rows with positive and negative values",0, result, .000000001d);
+		}
+		
+		//first input invalid
+		@Test
+		public void invalidFirstInputTest(){
+			final Values2D values = context.mock(Values2D.class);
+		    context.checking(new Expectations() {
+		        {
+		            one(values).getColumnCount();
+		            will(returnValue(0));
+		        }
+		    });
+		    
+		    double result = DataUtilities.calculateRowTotal(values, 5, validcols2);
+		    assertEquals("Input an empty Values2D object",result, 0, .000000001d);  
+		}
+		
+		//second input invalid
+		@Test
+		public void invalidSecondInputTest() {
+			final Values2D values = context.mock(Values2D.class);
+		    context.checking(new Expectations() {
+		        {
+		            one(values).getColumnCount();
+		            will(returnValue(0));
+		        }
+		    });
+		    double result = DataUtilities.calculateRowTotal(values, -1, validcols2);
+		    assertEquals("Input an invalid second input",result, 0, .000000001d);
+		}
+		
+		//passing null values for rows to add
+		@Test
+		public void NullRowValueTest() {
+			final Values2D values = context.mock(Values2D.class);
+		    context.checking(new Expectations() {
+		        {
+		        	one(values).getColumnCount();
+		            will(returnValue(4));
+		            one(values).getValue(0, 0);
+		            will(returnValue(null));
+		            one(values).getValue(0, 1);
+		            will(returnValue(null));
+		            one(values).getValue(0, 2);
+		            will(returnValue(null));
+		            one(values).getValue(0, 3);
+		            will(returnValue(null));
+		        }
+		    });
+		   
+		   double result = DataUtilities.calculateRowTotal(values, 0,validcols);
+		   assertEquals("Input Values2D object contains null value",0, result, .000000001d);
+		}
+		
+		//passing an empty valid columns array with missing 0 index
+		@Test
+		public void InvalidValidColArrayIndexTest() {
+			final Values2D values = context.mock(Values2D.class);
+		    context.checking(new Expectations() {
+		        {
+		        	one(values).getColumnCount();
+		            will(returnValue(4));
+		            one(values).getValue(0, 0);
+		            will(returnValue(null));
+		            one(values).getValue(0, 1);
+		            will(returnValue(null));
+		            one(values).getValue(0, 2);
+		            will(returnValue(null));
+		            one(values).getValue(0, 3);
+		            will(returnValue(null));
+		        }
+		    });
+		   
+		   double result = DataUtilities.calculateRowTotal(values, 0,validcols3);
+		   assertEquals("Input Values2D object contains null value",0, result, .000000001d);
+		}
+		
+		
+	    @After
+	    public void tearDown() throws Exception {
+	    	context = null;
+	    }
+
+	}
 }
