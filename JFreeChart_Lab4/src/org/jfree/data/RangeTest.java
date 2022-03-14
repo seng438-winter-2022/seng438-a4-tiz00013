@@ -1,6 +1,8 @@
 package org.jfree.data;
 
-import static org.junit.Assert.*; import org.jfree.data.Range; import org.junit.*;
+import static org.junit.Assert.*; 
+import org.jfree.data.Range; 
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.experimental.runners.Enclosed;
 
@@ -27,6 +29,7 @@ public class RangeTest {
 	    	test2 = new Range (-30, -10);
 	    	test3 = new Range (10.55, 99.55);
 	    	test4 = new Range (0,0);
+	  
 	    }
 	    // Checking to see if correct positive values that are in range are returned from toString() method	
 	    @Test
@@ -63,6 +66,8 @@ public class RangeTest {
 	    	}
 	    	assertTrue("Test with uninitialized input",flag);
 	    }
+	    
+	
 	    
 	    @After
 	    public void tearDown() throws Exception {
@@ -382,13 +387,20 @@ public class RangeTest {
 			assertEquals("Testing close Range Object",false, testR.equals(test));
 		}*/
 		
-		//For lab4 mutation test
+		//For lab4 mutation test 1
 		@Test
-		public void MutationTestForEqualsMethod() {
+		public void MutationTest1ForEqualsMethod() {
 			Range test = new Range(10,19);
 			assertEquals("Testing a Different Range Object with trival diffeence on upper bound", false, testR.equals(test));
 		}
 		
+		//For lab4 mutation test 1
+		@Test
+		public void MutationTest2ForEqualsMethod() {
+		Range test = new Range(9,20);
+		assertEquals("Testing a Different Range Object with trival diffeence on lower bound", false, testR.equals(test));
+		}
+////		
 		@After
 		public void tearDown()
 		{
@@ -621,12 +633,14 @@ public class RangeTest {
 		public static class ConstrainTest
 		{
 			private Range testR;
+			private Range testR2;
 	
 			/* Creating a Range object of testing */
 			@Before
 			public void setUp() throws Exception
 				{
 				testR = new Range(10.0, 30.0);
+				testR2 = new Range(10.0, 10.0);
 				}
 			
 			/* Testing a value that is within the range*/
@@ -669,6 +683,15 @@ public class RangeTest {
 				assertEquals("The Expected output doesnt match with the actual output.", 30.0, testR.constrain(value), .0000001d);
 			}
 			
+			//Mutation Test
+			@Test
+			public void mutationTest1ForMethodConstrain()
+			{
+				double value = 11;
+				assertEquals("The Expected output doesnt match with the actual output.", 11, testR.constrain(value), .0000001d);
+			}
+			
+			
 			@After
 			public void tearDown()
 			{
@@ -689,12 +712,26 @@ public class RangeTest {
 			
 			private Range r1;
 			private Range r2;
+			private Range r3;
+			private Range r4;
+			private Range r5;
+			private Range r6;
+			private Range r7;
+			private Range r8;
+			
 			
 			/* Create Range object for testing*/
 			@Before
 			public void setUp() throws Exception{
 				r1 = new Range (1,100);	
 				r2 = new Range (0,50);
+				r3 = new Range(29, 40);
+				r4 = new Range(30, 40);
+				r5 = new Range(30, 40);
+				r6 = new Range(30, 41);
+				r7 = new Range(30, 40);
+				r8 = new Range(30, 40);
+				
 			}
 			/* Testing if two different values will create a hashcode*/
 			@Test
@@ -703,6 +740,23 @@ public class RangeTest {
 				int y = r2.hashCode();
 				assertNotEquals("Test with different range input", x,y);
 			}
+			
+			//mutation test
+			@Test
+			public void mutationTest1ForMethodHashCode() {
+				int x = r3.hashCode();
+				int y = r4.hashCode();
+				assertNotEquals("Test with different range input", y,x);
+			}
+			
+			//mutation test
+			@Test
+			public void mutationTest2ForMethodHashCode() {
+				int x = r5.hashCode();
+				int y = r6.hashCode();
+				assertNotEquals("Test with different range input", x, y);
+			}
+			
 			
 		}
 		
@@ -784,6 +838,28 @@ public class RangeTest {
 				r2 = new Range(15,20);
 				assertTrue("Intersect Input Range", r1.intersects(r2));
 			}
+			
+			//Mutation Test
+			@Test
+			public void mutationTest1ForMethodIntersects()
+			{
+				assertTrue("test with arg1 > this.lower, arg2 > this.lower", r1.intersects(11,11));
+			}
+			
+			//Mutation Test
+			@Test
+			public void mutationTest2ForMethodIntersects()
+			{
+				assertTrue("test with arg1 > this.lower, arg2 > this.lower", r1.intersects(29,31));
+			}
+			
+			//Mutation Test
+			@Test
+			public void mutationTest3ForMethodIntersects()
+			{
+				assertTrue("test with arg1 < this.lower, arg2 > this.lower", r1.intersects(9,11));
+			}
+			
 			
 			//for single argument
 			@Test
