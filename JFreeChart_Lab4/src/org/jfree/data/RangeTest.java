@@ -239,6 +239,7 @@ public class RangeTest {
 			
 			assertEquals("The Central value is.", 100.0, testR5.getCentralValue(), .0000001d);
 		}
+		
 
 		@After
 		public void tearDown()
@@ -535,9 +536,7 @@ public class RangeTest {
 			testR2 = new Range(20.0, 50.0);
 			assertEquals("The expected range output doesnt match with the actual output", testR2, Range.expand(testR, -0.5, 1.0));
 		}
-		
-		
-
+	
 		@After
 		public void tearDown()
 			{
@@ -610,6 +609,9 @@ public class RangeTest {
 				assertEquals("The expected range output doesnt match with the actual output", testR3, Range.combine(testR, testR2));
 				
 			}
+			
+
+			
 			
 			
 			@After
@@ -692,6 +694,23 @@ public class RangeTest {
 				assertEquals("The Expected output doesnt match with the actual output.", 11, testR.constrain(value), .0000001d);
 			}
 			
+			//Mutation Test
+			@Test
+			public void mutationTest2ForMethodConstrain()
+			{
+				double value = 9;
+				assertEquals("The Expected output doesnt match with the actual output.", 10, testR.constrain(value), .0000001d);
+			}
+			
+			//Mutation Test
+			@Test
+			public void mutationTest3ForMethodConstrain()
+			{
+				double value = 31;
+				assertEquals("The Expected output doesnt match with the actual output.", 30, testR.constrain(value), .0000001d);
+			}
+			
+			
 			
 			@After
 			public void tearDown()
@@ -731,7 +750,8 @@ public class RangeTest {
 				r5 = new Range(30, 40);
 				r6 = new Range(30, 41);
 				r7 = new Range(30, 40);
-				r8 = new Range(30, 40);
+				r8 = new Range(10, 40);
+
 				
 			}
 			/* Testing if two different values will create a hashcode*/
@@ -758,7 +778,13 @@ public class RangeTest {
 				assertNotEquals("Test with different range input", x, y);
 			}
 			
-			
+			//mutation test
+			@Test
+			public void mutationTest3ForMethodHashCode() {
+				int x = r8.hashCode();
+				//int y = r5.hashCode();
+				assertEquals("Test with same range input", 2121531392, x);
+			}			
 		}
 		
 		// Constructor TestCase
@@ -789,21 +815,6 @@ public class RangeTest {
 				r1 = new Range(100.1,100);
 			}
 			
-//			@Test
-//			public void MutationTest2ForConstructor() {
-//				double a = 0;
-//				double b = 100;
-//				r1 = new Range(a, b);
-//				assertEquals("Test with local variable for lower bound",r1.getLowerBound(),a,.00000001d);
-//			}
-//			
-//			@Test
-//			public void MutationTest3ForConstructor() {
-//				double a = 0;
-//				double b = 100;
-//				r1 = new Range(a, b);
-//				assertEquals("Test with local variable for upper bound",r1.getUpperBound(),b,.00000001d);
-//			}
 			
 			@After
 			public void tearDown()
@@ -877,6 +888,7 @@ public class RangeTest {
 			{
 				assertTrue("test with arg1 < this.lower, arg2 > this.lower", r1.intersects(9,11));
 			}
+			
 			
 			
 			//for single argument
