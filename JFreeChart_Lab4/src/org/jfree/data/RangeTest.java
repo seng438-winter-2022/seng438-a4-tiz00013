@@ -789,11 +789,11 @@ public class RangeTest {
 			}
 			
 			//mutation test
-			@Test
+		@Test
 			public void mutationTest3ForMethodHashCode() {
 				int x = r8.hashCode();
 				//int y = r5.hashCode();
-				assertEquals("Test with same range input", 2121531392, x);
+				assertEquals("Test with same range input", -2074607616, x);
 			}			
 		}
 		
