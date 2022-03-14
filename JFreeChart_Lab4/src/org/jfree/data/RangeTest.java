@@ -536,6 +536,7 @@ public class RangeTest {
 			assertEquals("The expected range output doesnt match with the actual output", testR2, Range.expand(testR, -0.5, 1.0));
 		}
 		
+		
 
 		@After
 		public void tearDown()
@@ -703,8 +704,8 @@ public class RangeTest {
 		
 		/*
 		 * public int hashCode()
-		 *Returns integer hashcode for given range
-		 *Parameters: None
+		 * Returns integer hashcode for given range
+		 * Parameters: None
 		 *
 		 * 
 		 */
@@ -763,9 +764,10 @@ public class RangeTest {
 		// Constructor TestCase
 		public static class construtorTest{
 			private Range r1;
+			private Range r2;
 			@Before
 			public void setUp() throws Exception{
-				
+				r2 = new Range(0,100);
 			}
 			
 			//test the branch with situation when lower > upper
@@ -782,9 +784,25 @@ public class RangeTest {
 			}
 			
 			// For Lab4 mutation test
-//			@Test(expected = IllegalArgumentException.class)
-//			public void MutationTest1ForConstructor() {
-//				r1 = new Range(100.1,100);
+			@Test(expected = IllegalArgumentException.class)
+			public void MutationTest1ForConstructor() {
+				r1 = new Range(100.1,100);
+			}
+			
+//			@Test
+//			public void MutationTest2ForConstructor() {
+//				double a = 0;
+//				double b = 100;
+//				r1 = new Range(a, b);
+//				assertEquals("Test with local variable for lower bound",r1.getLowerBound(),a,.00000001d);
+//			}
+//			
+//			@Test
+//			public void MutationTest3ForConstructor() {
+//				double a = 0;
+//				double b = 100;
+//				r1 = new Range(a, b);
+//				assertEquals("Test with local variable for upper bound",r1.getUpperBound(),b,.00000001d);
 //			}
 			
 			@After
