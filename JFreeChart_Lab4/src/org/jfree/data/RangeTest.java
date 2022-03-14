@@ -382,6 +382,13 @@ public class RangeTest {
 			assertEquals("Testing close Range Object",false, testR.equals(test));
 		}*/
 		
+		//For lab4 mutation test
+		@Test
+		public void MutationTestForEqualsMethod() {
+			Range test = new Range(10,19);
+			assertEquals("Testing a Different Range Object with trival diffeence on upper bound", false, testR.equals(test));
+		}
+		
 		@After
 		public void tearDown()
 		{
@@ -719,6 +726,13 @@ public class RangeTest {
 				}
 				assertTrue("Test Constructor with lower > up", flag);
 			}
+			
+			// For Lab4 mutation test
+			@Test(expected = IllegalArgumentException.class)
+			public void MutationTest1ForConstructor() {
+				r1 = new Range(100.1,100);
+			}
+			
 			@After
 			public void tearDown()
 			{
@@ -1074,6 +1088,7 @@ public class RangeTest {
 					}
 					
 				}
-		
+				
+				
 	
 }
