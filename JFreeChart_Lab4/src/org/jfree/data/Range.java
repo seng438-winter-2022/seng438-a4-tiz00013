@@ -334,6 +334,8 @@ public strictfp class Range implements Serializable {
             lower = lower / 2.0 + upper / 2.0;
             upper = lower;
         }
+        System.out.println(lower);
+        System.out.println(upper);
         return new Range(lower, upper);
     }
 
