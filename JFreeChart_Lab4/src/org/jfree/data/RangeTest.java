@@ -952,26 +952,27 @@ public class RangeTest {
 		}
 		
 		//isNaNRange Method
-		/*public static class isNaNRangeTest{
+		public static class isNaNRangeTest{
 			private Range r1;
 			@Before
 			public void setUp() throws Exception{
 				
-				r1 = new Range (10,20);
 			}
 			
 			@Test
 			// Stmt coverage test with valid input
 			public void stmtTestForMethodIsNaNRange() {
-				assertTrue("Test with valid input", r1.isNaNRange());
+				double a = 0.1;
+				double b = 30.55;
+				r1 = new Range (a,b);
+				assertFalse("Test with valid input", r1.isNaNRange());
 			}
-			
 			
 			@After
 			public void tearDown(){
 			}
 			
-		}*/
+		}
 		
 		//scale Method
 		public static class scaleTest{
