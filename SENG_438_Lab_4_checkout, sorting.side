@@ -1,0 +1,435 @@
+{
+  "id": "00f3b45e-3dfb-476e-ad83-93bad6f696b7",
+  "version": "2.0",
+  "name": "SENG_438_Lab_4",
+  "url": "https://www.sportchek.ca/categories/men/jackets-coats-vests/winter-jackets.html",
+  "tests": [{
+    "id": "afe9a2bb-b927-46f9-9044-5a6dff3126d4",
+    "name": "checkout test",
+    "commands": [{
+      "id": "af766472-0a6e-4a6b-9d1b-75696c2a6c46",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.sportchek.ca/categories/kids/footwear/athletic-shoes/product/nike-kids-grade-school-wearallday-running-shoes-color-333754193_01-333754193.html#333754193%5Bcolor%5D=333754193_01",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "52a607f8-ea46-4280-b099-eddead3bb17f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1048",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aa49e00d-3c30-488b-82ac-944847fcbaa7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.page-header__content",
+      "targets": [
+        ["css=.page-header__content", "css:finder"],
+        ["xpath=//header/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8159c680-4334-4de5-97ab-e229ed188647",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=4",
+      "targets": [
+        ["linkText=4", "linkText"],
+        ["css=.option-tiles__item:nth-child(2)", "css:finder"],
+        ["xpath=//form[@id='product-detail-form']/div/div/div/fieldset[2]/div/div/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[23]", "xpath:href"],
+        ["xpath=//fieldset[2]/div/div/a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'4')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0347c7a2-d370-4506-867d-a789c2e34ebb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.number-spin-btn--up",
+      "targets": [
+        ["css=.number-spin-btn--up", "css:finder"],
+        ["xpath=//form[@id='product-detail-form']/div/div[3]/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div[3]/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "185cfb73-064b-410a-afc3-ca6bf94dc185",
+      "comment": "",
+      "command": "click",
+      "target": "css=.add-cart",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4f01370c-96d8-43fe-a84b-8f547ddbeab5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.header-cart__trigger",
+      "targets": [
+        ["css=.header-cart__trigger", "css:finder"],
+        ["xpath=//a[contains(@href, '/shopping-cart.html')]", "xpath:href"],
+        ["xpath=//div[6]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1b99718e-c7e1-4f67-b505-fd4666a72131",
+      "comment": "",
+      "command": "click",
+      "target": "css=.continue-checkout__label",
+      "targets": [
+        ["css=.continue-checkout__label", "css:finder"],
+        ["xpath=//main[@id='main-content']/div[2]/div[3]/div/div[3]/div/div[2]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[2]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ba5a3aa-1294-4c4d-a079-186ece693e53",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.continue-checkout__label",
+      "targets": [
+        ["css=.continue-checkout__label", "css:finder"],
+        ["xpath=//main[@id='main-content']/div[2]/div[3]/div/div[3]/div/div[2]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[2]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cdb76a21-2497-4333-b59d-60de5036daf0",
+      "comment": "",
+      "command": "click",
+      "target": "css=#gigya-login-form > .gigya-layout-row > .gigya-composite-control > .gigya-input-submit",
+      "targets": [
+        ["css=#gigya-login-form > .gigya-layout-row > .gigya-composite-control > .gigya-input-submit", "css:finder"],
+        ["xpath=//input[@value='Checkout as a guest']", "xpath:attributes"],
+        ["xpath=//form[@id='gigya-login-form']/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d087301c-b09d-4f6e-b7ac-31cdbe675adc",
+      "comment": "",
+      "command": "type",
+      "target": "name=firstName",
+      "targets": [
+        ["name=firstName", "name"],
+        ["css=.label-set:nth-child(2) > .label-set__text-field:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='firstName']", "xpath:attributes"],
+        ["xpath=//section[@id='ShipTo']/div/div/div/div/form/label[2]/input", "xpath:idRelative"],
+        ["xpath=//label[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "606a8672-097f-4401-baaf-6f29e3f9003a",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=firstName",
+      "targets": [],
+      "value": "Girimer"
+    }, {
+      "id": "8308e23a-3565-401a-802c-c0e6fe4e9aac",
+      "comment": "",
+      "command": "type",
+      "target": "name=lastName",
+      "targets": [
+        ["name=lastName", "name"],
+        ["css=.label-set:nth-child(3) > .label-set__text-field", "css:finder"],
+        ["xpath=//input[@name='lastName']", "xpath:attributes"],
+        ["xpath=//section[@id='ShipTo']/div/div/div/div/form/label[3]/input", "xpath:idRelative"],
+        ["xpath=//label[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd44f4de-85e7-4a59-b0ce-4ed9f1b2be57",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=lastName",
+      "targets": [],
+      "value": "Singh"
+    }, {
+      "id": "0320a8d1-e346-4e41-9124-106e6e6241d3",
+      "comment": "",
+      "command": "type",
+      "target": "id=line1",
+      "targets": [
+        ["id=line1", "id"],
+        ["name=line1", "name"],
+        ["css=#line1", "css:finder"],
+        ["xpath=//input[@id='line1']", "xpath:attributes"],
+        ["xpath=//section[@id='ShipTo']/div/div/div/div/form/label[4]/input", "xpath:idRelative"],
+        ["xpath=//label[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b4eee59-fbe9-4db1-a62f-ff48d41eeffd",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=line1",
+      "targets": [],
+      "value": "142 Skyview Ranch Blvd NE"
+    }, {
+      "id": "02ee6093-d29d-445c-b2ed-d138a38dc27b",
+      "comment": "",
+      "command": "type",
+      "target": "id=town",
+      "targets": [
+        ["id=town", "id"],
+        ["name=town", "name"],
+        ["css=#town", "css:finder"],
+        ["xpath=//input[@id='town']", "xpath:attributes"],
+        ["xpath=//section[@id='ShipTo']/div/div/div/div/form/label[6]/input", "xpath:idRelative"],
+        ["xpath=//label[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a79db1d7-5c89-492f-919b-09e7821ea121",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=town",
+      "targets": [],
+      "value": "Calgary"
+    }, {
+      "id": "0c5c0db6-fff3-480e-b4da-11b1e6b05f36",
+      "comment": "",
+      "command": "click",
+      "target": "id=province",
+      "targets": [
+        ["id=province", "id"],
+        ["name=province", "name"],
+        ["css=#province", "css:finder"],
+        ["xpath=//select[@id='province']", "xpath:attributes"],
+        ["xpath=//section[@id='ShipTo']/div/div/div/div/form/label[7]/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "20268ea4-8e97-43aa-9b1e-1b8a0f93be5b",
+      "comment": "",
+      "command": "select",
+      "target": "id=province",
+      "targets": [],
+      "value": "Alberta"
+    }, {
+      "id": "46b14b73-e85c-4871-8d84-7c1437c62531",
+      "comment": "",
+      "command": "type",
+      "target": "id=postalCode",
+      "targets": [
+        ["id=postalCode", "id"],
+        ["name=postalCode", "name"],
+        ["css=#postalCode", "css:finder"],
+        ["xpath=//input[@id='postalCode']", "xpath:attributes"],
+        ["xpath=//section[@id='ShipTo']/div/div/div/div/form/label[8]/input", "xpath:idRelative"],
+        ["xpath=//label[8]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4de6f2e1-eaed-4be7-b0bc-f14367fa6f53",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=postalCode",
+      "targets": [],
+      "value": "T3N 0K7"
+    }, {
+      "id": "743365b4-ac6c-4eb2-b66a-a3f9199a7d1d",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.label-set:nth-child(1) > .label-set__text-field", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//section[@id='ShipTo']/div/div/div/div/form/div/label/input", "xpath:idRelative"],
+        ["xpath=//div/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c9282bf-3169-497a-ad8b-796722c1450e",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=email",
+      "targets": [],
+      "value": "test@gmail.com"
+    }, {
+      "id": "a308361c-8061-474c-a7d2-b62dc9cb5a36",
+      "comment": "",
+      "command": "type",
+      "target": "name=phone",
+      "targets": [
+        ["name=phone", "name"],
+        ["css=.label-set:nth-child(2) > .label-set__text-field:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='phone']", "xpath:attributes"],
+        ["xpath=//section[@id='ShipTo']/div/div/div/div/form/div/label[2]/input", "xpath:idRelative"],
+        ["xpath=//div/label[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "823fd9ca-0c80-472d-8f5d-c3742af2da31",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=phone",
+      "targets": [],
+      "value": "4031237890"
+    }, {
+      "id": "f41f71ef-72c3-474a-92ea-f247afc88d7a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button",
+      "targets": [
+        ["css=.button", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//main[@id='main-content']/div[3]/div[3]/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'CONTINUE CHECKOUT')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "871dcfc1-0349-46b9-86da-247d736de5b9",
+    "name": "sort test",
+    "commands": [{
+      "id": "44653bcf-9e01-4ef5-a77b-e69ed59e9e56",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.sportchek.ca/categories/men/jackets-coats-vests/winter-jackets.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "314c96ba-16f0-4868-b612-8dd0a29f41ee",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1032",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2c82b06c-b9fb-4c96-bea3-27827f556a40",
+      "comment": "",
+      "command": "click",
+      "target": "css=select",
+      "targets": [
+        ["css=select", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/div[2]/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a5afff34-1c0b-4b71-b75c-74ab89761a91",
+      "comment": "",
+      "command": "select",
+      "target": "css=select",
+      "targets": [],
+      "value": "label=Price High to Low"
+    }, {
+      "id": "1a55d8f2-1825-465d-995b-5a9c688d7a4f",
+      "comment": "",
+      "command": "click",
+      "target": "css=select",
+      "targets": [
+        ["css=select", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/div[2]/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "afbd83ca-3172-4fbc-b5a6-a71115b7c853",
+      "comment": "",
+      "command": "select",
+      "target": "css=select",
+      "targets": [],
+      "value": "label=Price Low to High"
+    }, {
+      "id": "9e040fbf-2b0b-45ff-8247-0dcf0aaf7f28",
+      "comment": "",
+      "command": "click",
+      "target": "css=select",
+      "targets": [
+        ["css=select", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/div[2]/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ed52743-890d-47af-b17c-21a721b2a76d",
+      "comment": "",
+      "command": "select",
+      "target": "css=select",
+      "targets": [],
+      "value": "label=New Arrivals"
+    }, {
+      "id": "830e20bf-7d2f-4058-8b65-04c1be4d2911",
+      "comment": "",
+      "command": "click",
+      "target": "css=select",
+      "targets": [
+        ["css=select", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/div[2]/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2d1d4587-353f-41cd-ba05-4c908d5b2674",
+      "comment": "",
+      "command": "select",
+      "target": "css=select",
+      "targets": [],
+      "value": "label=Rating High to Low"
+    }, {
+      "id": "c0455916-a1e9-4ec4-9b3f-106b83cb286d",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,2814)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "14263470-a8a0-4af9-bf24-72a36512fdc8",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=6",
+      "targets": [
+        ["linkText=6", "linkText"],
+        ["css=.pagination__page-item:nth-child(7) > .pagination__page-link", "css:finder"],
+        ["xpath=//a[contains(text(),'6')]", "xpath:link"],
+        ["xpath=//main[@id='main-content']/div/div[4]/div[3]/div/div[2]/div/nav/ul/li[7]/a", "xpath:idRelative"],
+        ["xpath=//div[2]/div/nav/ul/li[7]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'6')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0508c451-fa5f-4413-a7d8-d6016cf59361",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,2776)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "449c6bce-62c3-4875-9019-e0f7f042482e",
+      "comment": "",
+      "command": "click",
+      "target": "css=select",
+      "targets": [
+        ["css=select", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/div[2]/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f993b4e-8046-49e7-9cd6-db239b54a3c3",
+      "comment": "",
+      "command": "select",
+      "target": "css=select",
+      "targets": [],
+      "value": "label=Rating Low to High"
+    }]
+  }],
+  "suites": [{
+    "id": "3a1066f8-2db0-48d0-b287-b7764d5899eb",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["afe9a2bb-b927-46f9-9044-5a6dff3126d4"]
+  }],
+  "urls": ["https://www.sportchek.ca/", "https://www.sportchek.ca/categories/kids/footwear/athletic-shoes/product/nike-kids-grade-school-wearallday-running-shoes-color-333754193_01-333754193.html#333754193%5Bcolor%5D=333754193_01", "https://www.sportchek.ca/categories/men/jackets-coats-vests/winter-jackets.html"],
+  "plugins": []
+}
