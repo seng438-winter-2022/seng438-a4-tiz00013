@@ -392,14 +392,14 @@ public class RangeTest {
 		@Test
 		public void MutationTest1ForEqualsMethod() {
 			Range test = new Range(10,19);
-			assertEquals("Testing a Different Range Object with trival diffeence on upper bound", false, testR.equals(test));
+			assertEquals("Testing a Different Range Object with trival difference on upper bound", false, testR.equals(test));
 		}
 		
 		//For lab4 mutation test 1
 		@Test
 		public void MutationTest2ForEqualsMethod() {
 		Range test = new Range(9,20);
-		assertEquals("Testing a Different Range Object with trival diffeence on lower bound", false, testR.equals(test));
+		assertEquals("Testing a Different Range Object with trival difference on lower bound", false, testR.equals(test));
 		}
 ////		
 		@After
