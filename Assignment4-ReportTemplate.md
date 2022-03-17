@@ -149,6 +149,12 @@ In this functionality, we tested whether items gets filtered according to the Br
 ### Change Store:-
 In this functionality, we didnt use any test data. We tested whether the change Store functionality changed the current store to the selected store. For instance, initially, the selected store on the website was Crowfoot and then we changed the store to the westbrook to see if the current store gets changed after performing this functionality.
 
+### Checkout:-
+To test checkout, an item was added to cart and then proceed to complete a guest checkout. All the shipping details were filled and then tested if payment option shows.
+
+### Sorting:-
+Items were sorted on a page from lowest to highest price, highest to lowest price, sorting based on rating and new arrivals. There is no way to verify if new arrivals work as intended as it is not clear when items were added to website. Clearance items showed on top in result of sorting by new arrivals.
+
 # Discuss advantages and disadvantages of Selenium vs. Sikulix
 Advantages of Selenium vs Sikulix
 -          supported in most web browsers (chrome, Firefox, Internet Explorer, and Safari)
