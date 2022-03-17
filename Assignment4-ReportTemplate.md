@@ -30,7 +30,64 @@ In part 2, we are going to perform GUI testing with Sportchcek’s web page. The
 | 10 |  90 | Incremented(--a) double local variable number 1  |Killed | The line of source code is within the class constructor. There is an if statement “if (lower > upper)”. In our test cases for constructor, we have a test method with lower = 100.1 and upper = 100. Therefore if the mutants try to decrease the lower by 1, it will actually change the statement condition state, thus this mutant is killed.|
 
 # Report all the statistics and the mutation score for each test class
+<p align="center">
+  <img width="600" src="https://github.com/seng438-winter-2022/seng438-a4-tiz00013/blob/main/images/Pic1.png" alt="Material Bread logo">
+</p>
+<p align="center">
+   Figure 1- Range Pit Test Coverage Report for original test suite
+</p>
 
+
+<p align="center">
+  <img width="600" src="https://github.com/seng438-winter-2022/seng438-a4-tiz00013/blob/main/images/Pic2.png" alt="Material Bread logo">
+</p>
+<p align="center">
+   Figure 2- Range Pit Mutation for original test suite
+</p>
+
+<p align="center">
+  <img width="600" src="https://github.com/seng438-winter-2022/seng438-a4-tiz00013/blob/main/images/Pic3.png" alt="Material Bread logo">
+</p>
+<p align="center">
+   Figure 3- Range Pit Test Coverage Report for updated test suite
+</p>
+
+<p align="center">
+  <img width="600" src="https://github.com/seng438-winter-2022/seng438-a4-tiz00013/blob/main/images/Pic4.png" alt="Material Bread logo">
+</p>
+<p align="center">
+   Figure 4- Range Pit Mutation for updated test suite
+</p>
+
+<p align="center">
+  <img width="600" src="https://github.com/seng438-winter-2022/seng438-a4-tiz00013/blob/main/images/Pic5.png" alt="Material Bread logo">
+</p>
+<p align="center">
+   Figure 5- DataUtilities Pit Test Coverage Report for original test suite 
+</p>
+
+<p align="center">
+  <img width="600" src="https://github.com/seng438-winter-2022/seng438-a4-tiz00013/blob/main/images/Pic6.png" alt="Material Bread logo">
+</p>
+<p align="center">
+   Figure 6- DataUtilities Pit Mutation for original test suite
+</p>
+
+
+<p align="center">
+  <img width="600" src="https://github.com/seng438-winter-2022/seng438-a4-tiz00013/blob/main/images/Pic7.png" alt="Material Bread logo">
+</p>
+<p align="center">
+   Figure 7-  DataUtilities Pit Test Coverage Report for updated test suite
+</p>
+
+
+<p align="center">
+  <img width="600" src="https://github.com/seng438-winter-2022/seng438-a4-tiz00013/blob/main/images/Pic8.png" alt="Material Bread logo">
+</p>
+<p align="center">
+   Figure 8- DataUtilities Pit Mutation for updated test suite
+</p>
 
 # Analysis drawn on the effectiveness of each of the test classes
 
