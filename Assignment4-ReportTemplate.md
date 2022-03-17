@@ -90,24 +90,83 @@ In part 2, we are going to perform GUI testing with Sportchcek’s web page. The
 </p>
 
 # Analysis drawn on the effectiveness of each of the test classes
+The mutation testing in this lab helped us to find the effectiveness of our test cases that were made in lab 3 for the Range class and for the Data Utilities class. The results illustrated in the above section of this report shows that the test cases made during the lab3 were not that effective and we found that mutation score for the Range class before the mutation testing was only 59% and for the Data Utilities class, it was 81%. This also shows that a lot of these test cases survived the mutants and thus our test cases were not effective in detecting the faults in the source code. 
+
+With the help of the mutation testing, we created additional test cases in some of the test classes where the mutants survived and run the PIT testing again to recalculate the mutation score for the Range class and for the Data Utilities Class. After implementing the mutation testing on both the classes, we found that the the mutation score of Range class and the Data Utilities class increased to 70% and 91% respectively. This also indicates that the new test cases changed the states of some of the mutants from survived to killed and thus helped in increasing the quality of test cases.
 
 # A discussion on the effect of equivalent mutants on mutation score accuracy
+Based on definition, equivalent mutants are the mutants that do the exactly same thing with the original program. They act in the same behavior as the original program. For example, if the original source code is “a = a+1” and if there is a mutant changes the code to be “a++”, then it will be an equivalent mutant since it does the same thing compared with the original code.
+
+Equivalent mutants will have no influence on mutation score. Since mutation score is calculated by mutation score = number of mutants killed by the test suites / number of all non equivalent mutants. Although equivalent mutants will always survive, it is not included within both denominator and numerator, so that equivalent mutants will have no impact on mutation score calculation. However, some mutation testing tools such as Pitest do include all mutants when calculating mutation coverage. Since for these tools they are not able to identify if a mutant is an equivalent mutant or not, in this way, it will decrease mutation score accuracy.
 
 # A discussion of what could have been done to improve the mutation score of the test suites
+Since the mutation score is calculated by the number of mutants killed by the test suites / number of all non equivalent mutants, to increase the mutation score, we need to have more non equivalent mutants to be detected and killed. In order to achieve that, we need to create more test cases based on the following conditions. First a test must reach the mutated statement. Otherwise if a mutated statement is not even reached, it can have no influence on the output, therefore that mutant can never be detected and killed. This condition is easy to reach if we have a good line coverage rate of our tests. Second, test input data should infect the program state by causing different program states for the mutant and the original program. This means we can try to create test cases based on the different kinds of mutants. For example, if we have a mutant which changes the condition within a if statement from a equality condition check to always false, then we must have a test case to make the condition of  that if statement becomes true, and the execution code within that if statement must have some influences on output, such that that mutants can be detected. Finally, The incorrect program state must propagate to the program's output and be checked by the test. This is to say, our test cases must be able to catch and detect the incorrect program state caused by mutants. Otherwise, if a mutant changes the program state but test cases don’t check for that state, that mutant still can not be detected.
 
 # Why do we need mutation testing? Advantages and disadvantages of mutation testing
+Mutation testing is important because the new test cases would help find more defects that exist in the program. This can improve the test suite and the quality of the program is improved and this is achieved by inserting mutants into the program and our newly designed test cases should be able to detect the faults that are present in the system. We want all the test cases to fail because if the test cases are passing then it means that there is error in the code that needs to be fixed. Furthermore, this method of testing is useful for getting a stronger coverage by testing certain parts of the code.
+
+Advantages
+-          Mutation testing is useful in detecting defaults or faults which might not be visible through original test cases
+-          Mutation testing ensures better coverage and improves test suite
+-          The program or software will be more reliable
+Disadvantages
+-          This technique is very time consuming and costly as the mutants must be generated separately
+-          Mutation testing will not work for black box testing as change of source code is needed
+-          Most of the times, many test cases need to be executed and automation tool would be needed
 
 # Explain your SELENUIM test case design process
+Our SELENIUM test case design process was based on the functionalities tested on the sportschek.ca. As a group of 4, we tested 8 important functionalities on their website and tested these functionalities using the SELENIUM IDE extension on the google chrome. 
+The following eight functionalities were tested on the sportscheck.ca using the SELENIUM Web driver
+1. Search Items:- Testing the search functionality using valid and invalid items on the website
+2. Add to the Cart:- Testing whether the right numbers of items are added to the cart
+3. Selecting size:- Testing whether the right Selected size is added to the cart
+4. Change Store:- Testing whether the change store functionality would change the current store to selected store in the change store menu.
+5. Promotion Code:- Testing invalid and valid inputs for the Promotion code field on the website.
+6. Filter- Testing whether the filter functionality produces the right results.
+7. Sort functionality:- Testing whether the sort functionality produces the right results
+8. Checkout Menu:- Testing whether the checkout button opens up the Payment window.
 
 # Explain the use of assertions and checkpoints
+Checkpoints are that location in test execution at which every tester should define it logically and intelligently, because it determines the failure condition as well as it helps in validation of the test cases with respect to its actual and expected data.
+
+Assertion is a tool to verify the result. It is used to determine the state of the application whether it is the same as what we are expecting or not. If the assertion fails, then the test case fails and stops the execution. It can be divided into hard assertion or soft assertion.Hard Assertions are used when we want to halt the execution of the test script when the assert condition does not match with the expected result. Soft Assertions are used when the test script need not be halted when the assertion condition does not meet the expected result.
+
+We can use assertion at checkpoints locations, such that if the system states at these key checkpoints locations can be verified. If the state is incorrect, we can immediately terminate our testing.
 
 # how did you test each functionaity with different test data
+The SELENIUM IDE was used to test each functionality with different test data and to automate the process of testing on the website. For each functionality, the test case was created in the SELENIUM IDE and we put the link of the sportscheck.ca in the url and start recording the functionality on the IDE. Once the recording the starts, the functionality is tested with both the valid and invalid inputs of data and when the testing is done, recording was stopped and recorded commands were run to make sure that it passed the test cases.
+All the 8 functionalities were tested in the following way
+### Search Functionality:-
+We recorded the invalid input(“kslskla”) as well as valid input(“shirts”) on the search field and ran the recorded commands to make sure that it passes the test cases. 
+### Add to Cart:- 
+This functionality was tested by adding the valid the number of the items in the cart of the selected item, for instance, adding 5 items of  selected shirt and the compared this number with the number of items displayed on the cart menu. We also tried to add very large number of selected items, for instance, adding 8923689333 ### items to the cart.
+### Promotion Code:-
+This functionality was testing was using the valid promotion code and invalid promotion code on the checkout menu.
+### Selecting Size:-
+In this functionality, we tested the different sizes options for the selected item. For instance, the different shirts sizes(S,M,L) were added to the cart and compared the added items with the items displayed on the cart menu.
+### Filter:-
+In this functionality, we tested whether items gets filtered according to the Brand Names. For Instance, If Adidas is selected in the filter menu, It should display only Adidas items. 
+### Change Store:-
+In this functionality, we didnt use any test data. We tested whether the change Store functionality changed the current store to the selected store. For instance, initially, the selected store on the website was Crowfoot and then we changed the store to the westbrook to see if the current store gets changed after performing this functionality.
 
 # Discuss advantages and disadvantages of Selenium vs. Sikulix
+Advantages of Selenium vs Sikulix
+-          supported in most web browsers (chrome, Firefox, Internet Explorer, and Safari)
+-          The use of HTML locators for testing web pages makes it more accurate
+-          Changes to the user interface would not cause test causes to fail
+ 
+Disadvantage of Selenium vs Sikulix
+-          It can test only applications that are web-based
+-          There is no support for flash objects (video player)
+-          Cannot be used to test desktop applications
+
 
 # How the team work/effort was divided and managed
+We downloaded on the required tools needed to complete this lab together (Pitest and Selenium IDE). After the installation process was complete, we ran test using the Pitest tool and had a good understanding on increasing the mutation coverage by adding more test cases to our test suite. Muhammad worked on the functions equals and expand for Range class. Manpreet worked on constrain and hashcode for Range class. Tianfan worked on constructor and intersects for the Range class. Girimer worked on the calculateColumnTotal and calculateRowTotal for DataUtilities class. For GUI testing, everyone tested 2 functionalities for the Sportchek website. Muhammad tested the search and add to cart. Manpreet tested the promotion and selecting size. Tianfan tested the filter and change store. Girimer tested the checkout menu and sort.
 
 
 # Difficulties encountered, challenges overcome, and lessons learned
+There were some challenges that we faced while completing this lab. For example, some of our group members had a trouble installing and configuring the Pitest tool as it was not working properly. The solution to this problem was to use the install the updated version of Pitest through the website rather than using the built-in marketplace in eclipse. Another challenge that we faced was that using the Selenium IDE. Sometimes the test cases were not getting recorded accurately. To overcome this problem, we had to make sure that we were executing the test slowly to make sure that everything gets executed and nothing gets missed. By completing part one of this lab, we have gained a good understanding of how creating mutants and writing test cases to kill the mutants. In part two we gained a good understanding of automate GUI testing and got familiar with recording and replaying the test cases. 
 
 # Comments/feedback on the lab itself
+After completing this lab, we have gained good knowledge on Mutation and GUI testing. After injecting mutants into the program, we analyzed the mutation score using the Pitest and created better test cases. Selenium IDE was useful in terms of how automated web based testing is done. This lab has taught the importance of mutation testing to find faults and fixing them with better test cases. The Selenium IDE would be useful to test if a website or GUI is working as it should. The lab instructions provided in the lab manual were detailed and helpful in completing the lab. Also, the installation steps given for Pitest and Selenium IDE were useful in successfully downloading these tools to complete the lab.
