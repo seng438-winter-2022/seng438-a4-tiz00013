@@ -755,11 +755,6 @@ public class RangeTest {
 			private Range r1;
 			private Range r2;
 			private Range r3;
-			private Range r4;
-			private Range r5;
-			private Range r6;
-			private Range r7;
-			private Range r8;
 			
 			
 			/* Create Range object for testing*/
@@ -767,12 +762,7 @@ public class RangeTest {
 			public void setUp() throws Exception{
 				r1 = new Range (1,100);	
 				r2 = new Range (0,50);
-				r3 = new Range(29, 40);
-				r4 = new Range(30, 40);
-				r5 = new Range(30, 40);
-				r6 = new Range(30, 41);
-				r7 = new Range(30, 40);
-				r8 = new Range(10, 40);
+				r3 = new Range(10, 40);
 
 				
 			}
@@ -784,27 +774,11 @@ public class RangeTest {
 				assertNotEquals("Test with different range input", x,y);
 			}
 			
-			//mutation test
-			@Test
-			public void mutationTest1ForMethodHashCode() {
-				int x = r3.hashCode();
-				int y = r4.hashCode();
-				assertNotEquals("Test with different range input", y,x);
-			}
-			
-			//mutation test
-			@Test
-			public void mutationTest2ForMethodHashCode() {
-				int x = r5.hashCode();
-				int y = r6.hashCode();
-				assertNotEquals("Test with different range input", x, y);
-			}
 			
 			//mutation test
 		@Test
 			public void mutationTest3ForMethodHashCode() {
-				int x = r8.hashCode();
-				//int y = r5.hashCode();
+				int x = r3.hashCode();
 				assertEquals("Test with same range input", -2074607616, x);
 			}			
 		
