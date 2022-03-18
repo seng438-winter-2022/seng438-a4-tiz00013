@@ -159,7 +159,7 @@ In this functionality, we tested the valid input and invalid input for the regis
 In this functionality, we tested whether items gets filtered according to the Brand Names. For Instance, If Adidas is selected in the filter menu, It should display only Adidas items. 
 
 ### Change Store:-
-In this functionality, we didnt use any test data. We tested whether the change Store functionality changed the current store to the selected store. For instance, initially, the selected store on the website was Crowfoot and then we changed the store to the westbrook to see if the current store gets changed after performing this functionality.
+In this functionality, we didnt use any test data. We tested whether the change Store functionality changed the current store to the selected store. For instance, initially, the selected store on the website was Crowfoot and then we changed the store to the Westbrook to see if the current store gets changed after performing this functionality.
 
 ### Checkout:-
 To test checkout, an item was added to cart and then proceed to complete a guest checkout. All the shipping details were filled and then tested if payment option shows. Moreover, the shipping location information consists of First Name, Last Name, Address, Postal-Code, Email and Phone Number. We tested all these field with the valid input and the invalid input.
