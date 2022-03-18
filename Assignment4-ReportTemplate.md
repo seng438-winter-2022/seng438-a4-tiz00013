@@ -120,11 +120,12 @@ Disadvantages
 
 
 # Explain your SELENUIM test case design process
-Our SELENIUM test case design process was based on the functionalities tested on the sportchek.ca. As a group of 4, we tested 8 important functionalities on their website and tested these functionalities using the SELENIUM IDE extension on the google chrome. 
+Our SELENIUM test case design process was based on the functionalities tested on the sportchek.ca. As a group of 4, we tested 8 important functionalities on their website and tested these functionalities using the SELENIUM IDE extension on the google chrome.
+
 The following eight functionalities were tested on the sportchek.ca using the SELENIUM Web driver
-1. Search Items:- Testing the search functionality using valid and invalid items on the website
-2. Sign In:- Testing  the valid and invalid credentials on the sign in page
-3. Register:- Testing the the valid and invalid inputs on the register page
+1. Search Items:- Testing the search functionality using valid and invalid items on the website.
+2. Sign In:- Testing  the valid and invalid credentials on the sign in page.
+3. Register:- Testing the the valid and invalid inputs on the register page.
 4. Change Store:- Testing whether the change store functionality would change the current store to selected store in the change store menu.
 5. Promotion Code:- Testing invalid and valid inputs for the Promotion code field on the website.
 6. Filter- Testing whether the filter functionality produces the right results.
@@ -134,7 +135,7 @@ The following eight functionalities were tested on the sportchek.ca using the SE
 # Explain the use of assertions and checkpoints
 Checkpoints are that location in test execution at which every tester should define it logically and intelligently, because it determines the failure condition as well as it helps in validation of the test cases with respect to its actual and expected data.
 
-Assertion is a tool to verify the result. It is used to determine the state of the application whether it is the same as what we are expecting or not. If the assertion fails, then the test case fails and stops the execution. It can be divided into hard assertion or soft assertion.Hard Assertions are used when we want to halt the execution of the test script when the assert condition does not match with the expected result. Soft Assertions are used when the test script need not be halted when the assertion condition does not meet the expected result.
+Assertion is a tool to verify the result. It is used to determine the state of the application whether it is the same as what we are expecting or not. If the assertion fails, then the test case fails and stops the execution. It can be divided into hard assertion or soft assertion. Hard Assertions are used when we want to halt the execution of the test script when the assert condition does not match with the expected result. Soft Assertions are used when the test script need not be halted when the assertion condition does not meet the expected result.
 
 We can use assertion at checkpoints locations, such that if the system states at these key checkpoints locations can be verified. If the state is incorrect, we can immediately terminate our testing.
 
