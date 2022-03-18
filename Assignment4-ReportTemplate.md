@@ -30,6 +30,7 @@ In part 2, we are going to perform GUI testing with Sport chek’s web page. The
 | 10 |  90 | Incremented(--a) double local variable number 1  |Killed | The line of source code is within the class constructor. There is an if statement “if (lower > upper)”. In our test cases for constructor, we have a test method with lower = 100.1 and upper = 100. Therefore if the mutants try to decrease the lower by 1, it will actually change the statement condition state, thus this mutant is killed.|
 
 # Report all the statistics and the mutation score for each test class
+## Range Class
 <p align="center">
   <img width="600" src="https://github.com/seng438-winter-2022/seng438-a4-tiz00013/blob/main/images/Pic1.png" alt="Material Bread logo">
 </p>
@@ -58,6 +59,8 @@ In part 2, we are going to perform GUI testing with Sport chek’s web page. The
 <p align="center">
    Figure 4- Range Pit Mutation for updated test suite
 </p>
+
+## Data Utilities Class
 
 <p align="center">
   <img width="600" src="https://github.com/seng438-winter-2022/seng438-a4-tiz00013/blob/main/images/Pic5.png" alt="Material Bread logo">
