@@ -2,7 +2,7 @@
 
 **Lab. Report \#4 – Mutation Testing and Web app testing**
 
-| Group \#: 6         |   |
+| Group \#: 23         |   |
 |-----------------  |---|
 | Manpreet Singh    |   |
 | Tianfan Zhou      |   |
