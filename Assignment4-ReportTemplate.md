@@ -150,7 +150,7 @@ We recorded the invalid input(“kslskla”) as well as valid input(“shirts”
 This functionality was tested by checking the correct credentials on the sign in page. For Instance, We tested the correct credentials of the user name and password and tried to sign in on the website. Moreover, We input the wrong credentials of the username and password and tested the sign in page with it.
 
 ### Promotion Code:-
-This functionality was testing was using the valid promotion code and invalid promotion code on the checkout menu.
+This functionality was testing by using the valid promotion code and invalid promotion code on the checkout menu.
 
 ### Register Page:-
 In this functionality, we tested the valid input and invalid input for the registration page. For instance, We provided a correct email which was never registered with the sportcheck website and tried to test the registration page with that email. Similarly, we tested the registration page with an invalid email and a registered email.
