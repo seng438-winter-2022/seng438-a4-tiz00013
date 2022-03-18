@@ -165,14 +165,14 @@ In this functionality, we didn't use any test data. Items were sorted on a page 
 
 # Discuss advantages and disadvantages of Selenium vs. Sikulix
 Advantages of Selenium vs Sikulix
--     supported in most web browsers (chrome, Firefox, Internet Explorer, and Safari)
--     The use of HTML locators for testing web pages makes it more accurate
--     Changes to the user interface would not cause test causes to fail
+-   supported in most web browsers (chrome, Firefox, Internet Explorer, and Safari)
+-   The use of HTML locators for testing web pages makes it more accurate
+-   Changes to the user interface would not cause test causes to fail
  
 Disadvantage of Selenium vs Sikulix
--     It can test only applications that are web-based
--     There is no support for flash objects (video player)
--     Cannot be used to test desktop applications
+-   It can test only applications that are web-based
+-   There is no support for flash objects (video player)
+-   Cannot be used to test desktop applications
 
 
 # How the team work/effort was divided and managed
