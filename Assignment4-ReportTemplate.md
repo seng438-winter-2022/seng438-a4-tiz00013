@@ -26,7 +26,7 @@ In part 2, we are going to perform GUI testing with Sportchcek’s web page. The
 |  6    |242   | Removed conditional - replaced equality check with false  | Survived|For line of source code “if (range2 != null && range2.isNaNRange()) Since the mutants change the equality check to false, we need a test case to make this statement become true in order to detect the mutants. We need to have range2.isNaNRange() become true. We don’t have that related test case in our original suites, therefore this mutant survived. |
 |  7    |  157 | Greater than to less or equal  |Killed |For line of source code “return (b1 > this.lower); Since it is directly return the statement result value. To change > to <= will flip the boolean value no matter what testing input we designed within our test cases. So that this mutant is detected and has been killed. |
 | 8 |132   |Replaced double addition with subtraction   |Killed |For line of source code “return this.lower / 2.0 + this.upper / 2.0; Unless this.upper is 0, otherwise replacing addition with subtraction in this operation will definitely change the method output. In our test cases, we don’t have upper to 0 cases, and we used assertEquals to match with the exact output value. Since mutation brings a different output value, thus, this test case is killed. |
-|    9  | 917  | Incremented(++a) double local variable number 1  |Survived|For this particular line of source code “​​String msg = "Range(double, double): require lower (" + lower + ") <= upper (" + upper + ")."; Mutant change the value of local variables. But for that local variable, it is only used to print the output for exception. It doesn’t have any influences with the method output. Therefore there is nothing we can do about test cases, this mutant has survived. |
+|    9  | 91  | Incremented(++a) double local variable number 1  |Survived|For this particular line of source code “​​String msg = "Range(double, double): require lower (" + lower + ") <= upper (" + upper + ")."; Mutant change the value of local variables. But for that local variable, it is only used to print the output for exception. It doesn’t have any influences with the method output. Therefore there is nothing we can do about test cases, this mutant has survived. |
 | 10 |  90 | Incremented(--a) double local variable number 1  |Killed | The line of source code is within the class constructor. There is an if statement “if (lower > upper)”. In our test cases for constructor, we have a test method with lower = 100.1 and upper = 100. Therefore if the mutants try to decrease the lower by 1, it will actually change the statement condition state, thus this mutant is killed.|
 
 # Report all the statistics and the mutation score for each test class
@@ -118,8 +118,8 @@ Disadvantages
 Our SELENIUM test case design process was based on the functionalities tested on the sportschek.ca. As a group of 4, we tested 8 important functionalities on their website and tested these functionalities using the SELENIUM IDE extension on the google chrome. 
 The following eight functionalities were tested on the sportscheck.ca using the SELENIUM Web driver
 1. Search Items:- Testing the search functionality using valid and invalid items on the website
-2. Add to the Cart:- Testing whether the right numbers of items are added to the cart
-3. Selecting size:- Testing whether the right Selected size is added to the cart
+2. Sign In:- Testing  the valid and invalid credentials on the sign in page
+3. Register:- Testing the the valid and invalid inputs on the register page
 4. Change Store:- Testing whether the change store functionality would change the current store to selected store in the change store menu.
 5. Promotion Code:- Testing invalid and valid inputs for the Promotion code field on the website.
 6. Filter- Testing whether the filter functionality produces the right results.
@@ -138,22 +138,22 @@ The SELENIUM IDE was used to test each functionality with different test data an
 All the 8 functionalities were tested in the following way
 ### Search Functionality:-
 We recorded the invalid input(“kslskla”) as well as valid input(“shirts”) on the search field and ran the recorded commands to make sure that it passes the test cases. 
-### Add to Cart:- 
-This functionality was tested by adding the valid the number of the items in the cart of the selected item, for instance, adding 5 items of  selected shirt and the compared this number with the number of items displayed on the cart menu. We also tried to add very large number of selected items, for instance, adding 8923689333 ### items to the cart.
+### Sign In:- 
+This functionality was tested by checking the correct credentials on the sign in page. For Instance, We tested the correct credentials of the user name and password and tried to sign in on the website. Moreover, We input the wrong credentials of the username and password and tested the sign in page with it.
 ### Promotion Code:-
 This functionality was testing was using the valid promotion code and invalid promotion code on the checkout menu.
-### Selecting Size:-
-In this functionality, we tested the different sizes options for the selected item. For instance, the different shirts sizes(S,M,L) were added to the cart and compared the added items with the items displayed on the cart menu.
+### Register Page:-
+In this functionality, we tested the valid input and invalid input for the registration page. For instance, We provided a correct email which was never registered with the sportcheck website and tried to test the registration page with that email. Similarly, we tested the registration page with an invalid email and a registered email.
 ### Filter:-
 In this functionality, we tested whether items gets filtered according to the Brand Names. For Instance, If Adidas is selected in the filter menu, It should display only Adidas items. 
 ### Change Store:-
 In this functionality, we didnt use any test data. We tested whether the change Store functionality changed the current store to the selected store. For instance, initially, the selected store on the website was Crowfoot and then we changed the store to the westbrook to see if the current store gets changed after performing this functionality.
 
 ### Checkout:-
-To test checkout, an item was added to cart and then proceed to complete a guest checkout. All the shipping details were filled and then tested if payment option shows.
+To test checkout, an item was added to cart and then proceed to complete a guest checkout. All the shipping details were filled and then tested if payment option shows. Moreover, the shipping location information consists of First Name, Last Name, Address, Postal-Code, Email and Phone Number. We tested all these field with the valid input and the invalid input.
 
 ### Sorting:-
-Items were sorted on a page from lowest to highest price, highest to lowest price, sorting based on rating and new arrivals. There is no way to verify if new arrivals work as intended as it is not clear when items were added to website. Clearance items showed on top in result of sorting by new arrivals.
+In this functionality, we didn't use any test data. Items were sorted on a page from lowest to highest price, highest to lowest price, sorting based on rating and new arrivals. There is no way to verify if new arrivals work as intended as it is not clear when items were added to website. Clearance items showed on top in result of sorting by new arrivals.
 
 # Discuss advantages and disadvantages of Selenium vs. Sikulix
 Advantages of Selenium vs Sikulix
